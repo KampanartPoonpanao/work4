@@ -10,10 +10,18 @@
 <h1 align = "center">Webboard Kukuk</h1>
     <hr>
     <div>
-    <center><?php echo "ต้องการดูกระทู้หมายเลข $_GET[id]"; ?></center>
+    <center><?php 
+    if ($_GET["id"]% 2 == 0) {
+    echo "ต้องการดูกระทู้หมายเลข".$_GET["id"]."<br>";
+    echo "เป็นกระทู้หมายเลขคี่";} 
+    
+    else {
+    echo "ต้องการดูกระทู้หมายเลข".$_GET["id"]."<br>";
+    echo "เป็นกระทู้หมายเลขคี่";}
+    ?></center>
     </div>
     <br>
-    <form action = "home.html" method = "post">
+    <form action = "index.php" method = "post">
     <table style="border:2px solid black ; width: 40%" align="center">
         <tr><td style="background-color:#6CD2FE ;"colspan="2">แสดงความคิดเห็น</td></tr>
         <tr><td align="center"><textarea name = "message" row="10" cols="30" ></textarea></td></tr>
